@@ -1,0 +1,70 @@
+Find command is used to search and locate the files and directories based on the conditions.
+
+1. Find Files using Name in the Current Directory
+
+# find . -name text.txt
+
+2. Find Files in absolute path [ /tmp ]
+
+# find /tmp -name text.txt
+
+3. Find Files using Name and Ignore Case
+
+# find /tmp -iname Text.txt
+
+4. Find Directories Using Name
+
+# find / -type d -name demo
+
+5. Find all PHP Files
+
+# find /tmp -type f -name Test.php
+
+6. Find all Files ends with ".php"
+
+# find /tmp -type f -name "*.php"
+
+7. Find Files with 777 permision
+
+# find / -type f -perm 0777 -print
+
+8. Find Files without 777 permission
+
+# find / -type f ! -prem 777 -print
+
+9. Find Read Only Files
+
+# find / -type f -perm /u=r
+
+10. Find Executable Files
+
+# find / -perm /a=x
+
+11. Find Files with 777 Permissions and Chmod to 644
+
+# find / -type f -perm 0777 -print -exec chmod 644 {} \;
+
+12. Find Directories with 777 Permissions and Chmod to 755
+
+# find / -type d -prem 0777 -print -exec chmod 755 {} \;
+
+13. Find and Remove Single File
+
+# find /tmp -type f -name "text.txt" -exec rm -rf {} \;
+
+14. Find and Remove files ending with "*.txt"
+
+# find / -type f -name "*.txt" -exec rm -rf {} \;
+
+15. Find all Empty Files
+
+# find /tmp -type f -empty
+
+16. Find all Empty Directories
+
+# find /tmp -type d -empty
+
+17. Find all Hidden Files
+
+# find /tmp -type f -name ".*"
+
