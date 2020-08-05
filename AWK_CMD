@@ -1,0 +1,81 @@
+AWK follows a simple workflow - Read, Execute and Repeat.
+
+---> Execute AWK command from BEGIN block
+
+---> Read a line from input stream
+
+---> Execute AWK command on a line
+
+---> Repeat if it is not End of File
+
+---> Execute AWK command from END block
+
+
+Read
+
+AWK reads a line from the input stream (file,pipe or stdin) and stores it in memory
+
+Execute
+
+All AWK command are applied sequentially on the input.By default AWK execute commands on every line.We can restrict this by providing patterns.
+
+Repeat
+
+This process repeats until it reaches the end of the file.
+
+
+Program Structure
+=================
+
+BEGIN Block
+
+BEGIN {awk-commands}
+
+The BEGIN block gets executed at program start-up.It is execute only once.This is the good place to initialize variables.
+
+Body Block
+
+/pattern/ {awk-commands}
+
+The body block applies AWK commands on every input line.By default,AWK executes commands on every line.
+
+END Block
+
+END {awk-commands}
+
+The END block executes at the end of the program.
+
+Example Data
+============
+
+1)  Amit    Physics  80
+2)  Rahul   Maths    90
+3)  Shyam   Biology  87
+4)  Kedar   English  85
+5)  Hari    History  89
+
+Example 1
+=========
+Add line at the begin of the file first line.
+
+awk 'BEGIN { printf "Sr.No\tName\tSubject\Marks\n" } { print }' data_input.txt
+
+Example 2
+=========
+Display the contents of the input file i.e print all lines
+
+awk '{print}' data_input.txt
+awk '{print $0}' data_input.txt
+
+Example 3
+=========
+Assign value to a variable.It allows assignment before the program execution.
+
+awk -v surname=Pokhriyal 'BEGIN{printf "My Name is Prashant %s \n",surname}'
+
+Example 4
+=========
+AWK can print specific Column or Field.For example print 3rd column
+
+awk '{print $3}' data_input.txt
+
