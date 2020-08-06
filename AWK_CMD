@@ -79,3 +79,24 @@ AWK can print specific Column or Field.For example print 3rd column
 
 awk '{print $3}' data_input.txt
 
+Example 5
+=========
+Print when a pattern matches
+
+awk '/r/ {print $3}' data_input.txt
+
+Example 6
+=========
+Print lines with more than 18 characters.Awk have inbuilt function called length.
+
+awk 'length($0) > 18' data_input.txt
+
+Standard AWK Variables
+======================
+
+ARGC : It gives the number of arguments passed.The counting of arguments also include awk word as a argument,in that case argument passed number is always one more.This can be avoided by giving ARGC-1
+
+awk 'BEGIN{print "Arguments=",ARGC}' One Two Three
+or
+awk 'BEGIN{print "Arguments=",ARGC-1}' One Two Three
+
